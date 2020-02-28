@@ -4,7 +4,6 @@ import { Container } from "semantic-ui-react";
 import { StateProvider } from "./store";
 import ResultTable from "./ResultTable";
 import SearchBar from "./SearchBar";
-import DetailsSegmentModal from "./DetailsSegmentModal";
 import styles from "./Styles";
 
 const { StyledGrid } = styles;
@@ -54,11 +53,6 @@ function App() {
           ui: { ...state.ui, selectedId: action.id, isDetails: true },
           data: { ...state.data }
         };
-      case "closeModal":
-        return {
-          ui: { ...state.ui, selectedId: null, isDetails: false },
-          data: { ...state.data }
-        };
       default:
         return state;
     }
@@ -69,7 +63,6 @@ function App() {
         <StyledGrid>
           <SearchBar />
           <ResultTable />
-          <DetailsSegmentModal />
         </StyledGrid>
       </Container>
     </StateProvider>
