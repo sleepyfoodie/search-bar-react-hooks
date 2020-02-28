@@ -5,9 +5,7 @@ import "./index.css";
 import { StateProvider } from "./store.js";
 
 const app = (
-  <StateProvider>
-    <App />
-  </StateProvider>
+  <App />
 );
 
 ReactDOM.render(app, document.getElementById("root"));
